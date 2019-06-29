@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greader/pages/vocab_page.dart';
 
 import 'package:provider/provider.dart';
 import 'package:greader/providers/vocab_provider.dart';
@@ -39,7 +40,7 @@ class VocabularyCard extends StatelessWidget {
           },
           separatorBuilder: (BuildContext context, int index) {
             return Divider(
-              height: 26.0,
+              height: 30.0,
               color: Colors.black45,
             );
           },
@@ -72,15 +73,24 @@ class VocabularyCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20.0),
       ),
       clipBehavior: Clip.antiAlias,
-      child: Container(
-        width: 220.0,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            _buildCardHeader(difficultyIndex),
-            _buildSectionsList(),
-            _buildDifficultySlider(difficultyIndex),
-          ],
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) => VocabPage(vocabulary),
+            ),
+          );
+        },
+        child: Container(
+          width: 220.0,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              _buildCardHeader(difficultyIndex),
+              _buildSectionsList(),
+              _buildDifficultySlider(difficultyIndex),
+            ],
+          ),
         ),
       ),
     );
