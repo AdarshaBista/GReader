@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:greader/models/section.dart';
 
 import 'package:greader/styles/styles.dart';
+import 'package:greader/utils/util.dart';
 
 class SectionCard extends StatelessWidget {
   final Section section;
@@ -17,7 +18,7 @@ class SectionCard extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return Text(
             section.words[index],
-            style: mediumText,
+            style: mediumText.copyWith(color: Util.isAntonym(section.words[index]) ? Colors.red : Colors.black),
             textAlign: TextAlign.center,
           );
         },

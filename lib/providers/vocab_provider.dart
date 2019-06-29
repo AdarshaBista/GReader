@@ -11,7 +11,7 @@ class VocabProvider extends ChangeNotifier {
   bool isLoading = false;
   List<Vocabulary> vocabs = [];
   final String _url =
-      "https://gist.githubusercontent.com/AdarshaBista/2a6bc4831a3cb6732bb7c517136452be/raw/01bbfe269f351d962187c3c46b48dac1477776b6/words.json";
+      "https://gist.githubusercontent.com/AdarshaBista/2a6bc4831a3cb6732bb7c517136452be/raw/791ed37187e760d6558e0ade74e1287425d7b7c2/words.json";
 
   Future<void> fetchVocabs() async {
     setLoading(true);
