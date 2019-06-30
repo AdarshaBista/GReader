@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:greader/models/vocabulary.dart';
 
 import 'package:greader/styles/styles.dart';
-import 'package:greader/styles/styles.dart' as prefix0;
 import 'package:greader/widgets/section_card.dart';
+import 'package:greader/widgets/player_controls.dart';
 
 class VocabPage extends StatelessWidget {
   final Vocabulary vocabulary;
@@ -18,12 +18,14 @@ class VocabPage extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        backgroundColor: prefix0.difficultyColors[vocabulary.difficultyLevel.index],
+        backgroundColor: difficultyColors[vocabulary.difficultyLevel.index],
         title: Text(
           vocabulary.title,
           style: largeText,
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: PlayerControls(),
       body: ListView.builder(
         physics: BouncingScrollPhysics(),
         itemCount: vocabulary.sections.length,

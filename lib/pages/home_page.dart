@@ -21,8 +21,12 @@ class HomePage extends StatelessWidget {
           style: largeText,
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
+        heroTag: 'fab',
         onPressed: vocabProvider.fetchVocabs,
+        backgroundColor: primaryColor,
+        child: Icon(Icons.refresh),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 50.0),
