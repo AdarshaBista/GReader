@@ -13,25 +13,28 @@ class VocabPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: backgroundColor,
-      appBar: AppBar(
-        elevation: 0.0,
-        centerTitle: true,
-        backgroundColor: difficultyColors[vocabulary.difficultyLevel.index],
-        title: Text(
-          vocabulary.title,
-          style: largeText,
+    return Hero(
+      tag: vocabulary.title,
+      child: Scaffold(
+        backgroundColor: backgroundColor,
+        appBar: AppBar(
+          elevation: 0.0,
+          centerTitle: true,
+          backgroundColor: difficultyColors[vocabulary.difficultyLevel.index],
+          title: Text(
+            vocabulary.title,
+            style: largeText,
+          ),
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: PlayerControls(),
-      body: ListView.builder(
-        physics: BouncingScrollPhysics(),
-        itemCount: vocabulary.sections.length,
-        itemBuilder: (BuildContext context, int index) {
-          return SectionCard(vocabulary.sections[index]);
-        },
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: PlayerControls(),
+        body: ListView.builder(
+          physics: BouncingScrollPhysics(),
+          itemCount: vocabulary.sections.length,
+          itemBuilder: (BuildContext context, int index) {
+            return SectionCard(vocabulary.sections[index]);
+          },
+        ),
       ),
     );
   }

@@ -65,31 +65,34 @@ class VocabularyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int difficultyIndex = vocabulary.difficultyLevel.index;
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 16.0),
-      color: Colors.white,
-      elevation: 8.0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
-      ),
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (BuildContext context) => VocabPage(vocabulary),
+    return Hero(
+      tag: vocabulary.title,
+      child: Card(
+        margin: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 16.0),
+        color: Colors.white,
+        elevation: 8.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => VocabPage(vocabulary),
+              ),
+            );
+          },
+          child: Container(
+            width: 220.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                _buildCardHeader(difficultyIndex),
+                _buildSectionsList(),
+                _buildDifficultySlider(difficultyIndex),
+              ],
             ),
-          );
-        },
-        child: Container(
-          width: 220.0,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              _buildCardHeader(difficultyIndex),
-              _buildSectionsList(),
-              _buildDifficultySlider(difficultyIndex),
-            ],
           ),
         ),
       ),

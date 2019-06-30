@@ -23,7 +23,6 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        heroTag: 'fab',
         onPressed: vocabProvider.fetchVocabs,
         backgroundColor: primaryColor,
         child: Icon(Icons.refresh),
