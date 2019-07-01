@@ -19,7 +19,7 @@ class VocabProvider extends ChangeNotifier {
     vocabs.clear();
     final http.Response response = await http.get(_url);
     final List<dynamic> responseData = jsonDecode(response.body);
-    parseVocabs(responseData);
+    await parseVocabs(responseData);
 
     setLoading(false);
   }
