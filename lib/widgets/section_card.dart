@@ -33,7 +33,7 @@ class SectionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+      margin: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 16.0),
       color: Colors.white,
       elevation: 8.0,
       shape: RoundedRectangleBorder(

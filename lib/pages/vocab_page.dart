@@ -4,7 +4,6 @@ import 'package:greader/models/vocabulary.dart';
 
 import 'package:greader/styles/styles.dart';
 import 'package:greader/widgets/section_card.dart';
-import 'package:greader/widgets/player_controls.dart';
 
 class VocabPage extends StatelessWidget {
   final Vocabulary vocabulary;
@@ -26,8 +25,6 @@ class VocabPage extends StatelessWidget {
             style: largeText,
           ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: PlayerControls(),
         body: ListView.builder(
           physics: BouncingScrollPhysics(),
           itemCount: vocabulary.sections.length,
