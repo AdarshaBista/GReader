@@ -6,7 +6,26 @@ import 'package:greader/providers/vocab_provider.dart';
 import 'package:greader/styles/styles.dart';
 import 'package:greader/pages/home_page.dart';
 
-void main() => runApp(GReader());
+// For Flutter Desktop Support. To be removed later
+import 'dart:io';
+import 'package:flutter/foundation.dart' show debugDefaultTargetPlatformOverride;
+
+void _setTargetPlatformForDesktop() {
+  TargetPlatform targetPlatform;
+  if (Platform.isMacOS) {
+    targetPlatform = TargetPlatform.iOS;
+  } else if (Platform.isLinux || Platform.isWindows) {
+    targetPlatform = TargetPlatform.android;
+  }
+  if (targetPlatform != null) {
+    debugDefaultTargetPlatformOverride = targetPlatform;
+  }
+}
+
+void main() {
+  _setTargetPlatformForDesktop();
+  runApp(GReader());
+}
 
 class GReader extends StatefulWidget {
   @override

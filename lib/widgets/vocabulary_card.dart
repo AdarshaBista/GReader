@@ -53,10 +53,7 @@ class VocabularyCard extends StatelessWidget {
             padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 8.0),
             child: WaveSlider(
               color: difficultyColors[difficultyIndex],
-              onChanged: (double newValue) {
-                final int index = ((DifficultyLevel.values.length - 1) * newValue).round();
-                vocabProvider.setDifficulty(DifficultyLevel.values[index], vocabulary.title);
-              },
+              onChanged: (double newValue) {},
             ),
           );
         },

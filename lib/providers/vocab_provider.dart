@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:greader/models/section.dart';
@@ -34,7 +33,7 @@ class VocabProvider extends ChangeNotifier {
       vocabs.add(
         Vocabulary(
           title: vocabJson['title'] as String,
-          difficultyLevel: DifficultyLevel.values[await getDifficulty(vocabJson['title'] as String)],
+          difficultyLevel: DifficultyLevel.Easy,
           sections: List<Section>.generate(
             (vocabJson['sections'] as List).length,
             (index) => Section.fromJson(vocabJson['sections'][index]),
@@ -42,21 +41,6 @@ class VocabProvider extends ChangeNotifier {
         ),
       );
     }
-  }
-
-  Future<int> getDifficulty(String title) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getInt(title) ?? 1;
-  }
-
-  Future<void> setDifficulty(DifficultyLevel level, String title) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setInt(title, level.index);
-
-    int index = vocabs.indexWhere((vocab) => vocab.title == title);
-    vocabs[index].difficultyLevel = level;
-
-    notifyListeners();
   }
 
   void setLoading(bool loading) {
