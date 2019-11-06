@@ -35,10 +35,7 @@ class VocabProvider extends ChangeNotifier {
         Vocabulary(
           title: vocabJson['title'] as String,
           difficultyLevel: DifficultyLevel.values[await getDifficulty(vocabJson['title'] as String)],
-          sections: List<Section>.generate(
-            (vocabJson['sections'] as List).length,
-            (index) => Section.fromJson(vocabJson['sections'][index]),
-          ),
+          sections: (vocabJson['sections'] as List).map((i) => Section.fromJson(i)).toList(),
         ),
       );
     }

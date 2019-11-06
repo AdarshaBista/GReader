@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:greader/utils/util.dart';
+import 'package:greader/styles/styles.dart';
+
 import 'package:greader/models/section.dart';
 
-import 'package:greader/styles/styles.dart';
-import 'package:greader/utils/util.dart';
 
 class SectionCard extends StatelessWidget {
   final Section section;

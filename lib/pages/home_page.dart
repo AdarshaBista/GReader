@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
+import 'package:greader/styles/styles.dart';
+
 import 'package:greader/providers/vocab_provider.dart';
 
-import 'package:greader/styles/styles.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:greader/widgets/vocabulary_card.dart';
 

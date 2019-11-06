@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:greader/styles/styles.dart';
 import 'package:greader/models/vocabulary.dart';
 
-import 'package:greader/styles/styles.dart';
 import 'package:greader/widgets/section_card.dart';
 
 class VocabPage extends StatelessWidget {

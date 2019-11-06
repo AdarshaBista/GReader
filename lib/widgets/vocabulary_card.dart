@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:greader/pages/vocab_page.dart';
 
 import 'package:provider/provider.dart';
-import 'package:greader/providers/vocab_provider.dart';
-import 'package:greader/models/vocabulary.dart';
-
 import 'package:greader/styles/styles.dart';
+
+import 'package:greader/models/vocabulary.dart';
+import 'package:greader/providers/vocab_provider.dart';
+
 import 'package:wave_slider/wave_slider.dart';
+
+import 'package:greader/pages/vocab_page.dart';
 
 class VocabularyCard extends StatelessWidget {
   final Vocabulary vocabulary;
