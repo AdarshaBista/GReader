@@ -19,7 +19,7 @@ class VocabPage extends StatelessWidget {
         appBar: AppBar(
           elevation: 0.0,
           centerTitle: true,
-          backgroundColor: difficultyColors[vocabulary.difficultyLevel],
+          backgroundColor: primaryColor,
           title: Text(
             vocabulary.title,
             style: largeText,

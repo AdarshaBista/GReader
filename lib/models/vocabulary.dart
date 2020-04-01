@@ -7,25 +7,20 @@ import 'package:greader/models/section.dart';
 class Vocabulary {
   final String title;
   final List<Section> sections;
-  int difficultyLevel;
 
   Vocabulary({
     @required this.title,
     @required this.sections,
-    @required this.difficultyLevel,
   })  : assert(title != null),
-        assert(sections != null),
-        assert(difficultyLevel != null);
+        assert(sections != null);
 
   Vocabulary copyWith({
     String title,
     List<Section> sections,
-    int difficultyLevel,
   }) {
     return Vocabulary(
       title: title ?? this.title,
       sections: sections ?? this.sections,
-      difficultyLevel: difficultyLevel ?? this.difficultyLevel,
     );
   }
 
@@ -33,7 +28,6 @@ class Vocabulary {
     return {
       'title': title,
       'sections': List<dynamic>.from(sections.map((x) => x.toMap())),
-      'difficultyLevel': difficultyLevel,
     };
   }
 
@@ -44,7 +38,6 @@ class Vocabulary {
       title: map['title'],
       sections: List<Section>.from(map['sections']
           ?.map((x) => Section.fromMap(x as Map<String, dynamic>))),
-      difficultyLevel: map['difficultyLevel'] ?? 0,
     );
   }
 
@@ -53,8 +46,7 @@ class Vocabulary {
   static Vocabulary fromJson(String source) => fromMap(json.decode(source));
 
   @override
-  String toString() =>
-      'Vocabulary(title: $title, sections: $sections, difficultyLevel: $difficultyLevel)';
+  String toString() => 'Vocabulary(title: $title, sections: $sections)';
 
   @override
   bool operator ==(Object o) {
@@ -62,11 +54,9 @@ class Vocabulary {
 
     return o is Vocabulary &&
         o.title == title &&
-        listEquals(o.sections, sections) &&
-        o.difficultyLevel == difficultyLevel;
+        listEquals(o.sections, sections);
   }
 
   @override
-  int get hashCode =>
-      title.hashCode ^ sections.hashCode ^ difficultyLevel.hashCode;
+  int get hashCode => title.hashCode ^ sections.hashCode;
 }

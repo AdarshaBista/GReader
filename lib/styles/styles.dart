@@ -32,10 +32,3 @@ const TextStyle extraSmallText = TextStyle(
 const Color backgroundColor = Colors.white;
 const Color primaryColor = Color(0xffffdb39);
 const Color accentColor = Color(0xffffa939);
-
-// Difficulty level colors
-const difficultyColors = [
-  Color(0xffe53935),
-  Color(0xffffdb39),
-  Color(0xff00C853),
-];

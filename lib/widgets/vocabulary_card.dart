@@ -11,11 +11,11 @@ class VocabularyCard extends StatelessWidget {
 
   VocabularyCard(this.vocabulary);
 
-  Widget _buildCardHeader(int difficultyIndex) => Container(
+  Widget _buildCardHeader() => Container(
         width: double.infinity,
         height: 50.0,
         alignment: Alignment.center,
-        color: difficultyColors[difficultyIndex],
+        color: primaryColor,
         child: Text(
           vocabulary.title,
           style: largeText,
@@ -70,7 +70,7 @@ class VocabularyCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                _buildCardHeader(vocabulary.difficultyLevel),
+                _buildCardHeader(),
                 _buildSectionsList(),
                 PlayerControls(vocabulary: vocabulary),
               ],
