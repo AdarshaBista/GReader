@@ -1,0 +1,103 @@
+[
+    {
+        "title": "Vocabulary 1",
+        "sections": [
+            {
+                "title": "PREDICTION",
+                "words": [
+                    "Augur / Augury",
+                    "Forecast",
+                    "Foresight / Foresee",
+                    "Foretell",
+                    "Presage",
+                    "Prescience",
+                    "Prognosis",
+                ]
+            },
+            {
+                "title": "SIGN (WARNING)",
+                "words": [
+                    "Forebode",
+                    "Foreshadow",
+                    "Portend",
+                    "Portent",
+                    "Premonition"
+                ]
+            },
+            {
+                "title": "THREATENING",
+                "words": [
+                    "Intimidate",
+                    "Ominous",
+                    "Sinister"
+                ]
+            },
+            {
+                "title": "VERY ANGRY",
+                "words": [
+                    "Enrage",
+                    "Fume",
+                    "Glower",
+                    "Incense",
+                    "Infuriate",
+                    "Irate",
+                    "Ire",
+                    "Livid",
+                    "Rabid",
+                    "Seethe",
+                    "Smolder",
+                    "Wrath"
+                ]
+            },
+            {
+                "title": "DETAILED KNOWLEDGE / INTELLECTUAL",
+                "words": [
+                    "Cerebral",
+                    "Erudite",
+                    "Pundit"
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Vocabulary 2",
+        "sections": [
+            {
+                "title": "HATE",
+                "words": [
+                    "Abhor",
+                    "Animosity",
+                    "Antipathy",
+                    "Aversion",
+                    "Despicable",
+                    "Detest",
+                    "Loathe",
+                    "Odious",
+                    "Repel",
+                    "Repugnant",
+                    "Repulsion"
+                ]
+            },
+            {
+                "title": "OLD FASHIONED / OUTDATED",
+                "words": [
+                    "Antediluvian",
+                    "Antiquated",
+                    "Archaic",
+                    "Dated",
+                    "Obsolete",
+                    "Outmoded",
+                    "Quaint"
+                ]
+            },
+            {
+                "title": "TIME RELATED WORDS",
+                "words": [
+                    "Anachronism",
+                    "Chronicle",
+                    "Chronological"
+                ]
+            }
+        ]
+    }
+]
