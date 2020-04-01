@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'package:provider/provider.dart';
-import 'package:greader/providers/vocab_provider.dart';
-
 import 'package:greader/models/vocabulary.dart';
 
 import 'package:greader/styles/styles.dart';
-import 'package:wave_slider/wave_slider.dart';
+import 'package:greader/widgets/player_controls.dart';
 import 'package:greader/pages/vocab_page.dart';
 
 class VocabularyCard extends StatelessWidget {
@@ -48,22 +45,6 @@ class VocabularyCard extends StatelessWidget {
         ),
       );
 
-  Widget _buildDifficultySlider(int difficultyIndex) => Consumer<VocabProvider>(
-        builder: (BuildContext context, VocabProvider vocabProvider, _) {
-          return Container(
-            padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 8.0),
-            child: WaveSlider(
-              color: difficultyColors[difficultyIndex],
-              onChanged: (double newValue) {
-                // TODO: Set difficulty
-                // final int index = (2 * newValue).round();
-                // vocabProvider.setDifficulty([index], vocabulary.title);
-              },
-            ),
-          );
-        },
-      );
-
   @override
   Widget build(BuildContext context) {
     return Hero(
@@ -91,7 +72,7 @@ class VocabularyCard extends StatelessWidget {
               children: <Widget>[
                 _buildCardHeader(vocabulary.difficultyLevel),
                 _buildSectionsList(),
-                _buildDifficultySlider(vocabulary.difficultyLevel),
+                PlayerControls(vocabulary: vocabulary),
               ],
             ),
           ),
