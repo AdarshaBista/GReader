@@ -19,6 +19,7 @@ class TtsService {
 
   void play(String msg) async {
     _tts.stop();
+    _tts.setSpeechRate(0.4);
     _tts.speak(msg);
   }
 

@@ -22,7 +22,7 @@ class PlayerControls extends StatelessWidget {
           vocabProvider.isPlaying ? Icons.stop : Icons.play_circle_outline,
           size: 40.0,
         ),
-        onPressed: () => vocabProvider.play(vocabulary),
+        onPressed: () => vocabProvider.toggle(vocabulary),
       ),
     );
   }

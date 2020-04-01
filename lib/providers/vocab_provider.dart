@@ -20,9 +20,18 @@ class VocabProvider extends ChangeNotifier {
   List<Vocabulary> _vocabs = [];
   List<Vocabulary> get vocabs => _vocabs;
 
-  void play(Vocabulary vocab) {
+  void toggle(Vocabulary vocab) {
+    isPlaying = !isPlaying;
+
+    if (!isPlaying) {
+      ttsService.stop();
+      notifyListeners();
+      return;
+    }
+
     int index = _vocabs.indexOf(vocab);
     ttsService.play(_stringify(index));
+
     isPlaying = true;
     notifyListeners();
 
@@ -30,12 +39,6 @@ class VocabProvider extends ChangeNotifier {
       isPlaying = false;
       notifyListeners();
     });
-  }
-
-  void stop() {
-    ttsService.stop();
-    isPlaying = false;
-    notifyListeners();
   }
 
   String _stringify(int index) {
