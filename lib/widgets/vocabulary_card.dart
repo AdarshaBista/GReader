@@ -85,7 +85,7 @@ class VocabularyCard extends StatelessWidget {
             );
           },
           child: Container(
-            width: 220.0,
+            width: 240.0,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[

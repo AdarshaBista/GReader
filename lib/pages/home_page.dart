@@ -5,8 +5,8 @@ import 'package:greader/styles/styles.dart';
 
 import 'package:greader/providers/vocab_provider.dart';
 
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:greader/widgets/vocabulary_card.dart';
+import 'package:greader/widgets/loading_indicator.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -38,14 +38,7 @@ class HomePage extends StatelessWidget {
             ),
             Expanded(
               child: vocabProvider.isLoading
-                  ? Center(
-                      child: SpinKitWave(
-                        color: primaryColor,
-                        duration: Duration(seconds: 1),
-                        size: 40.0,
-                        type: SpinKitWaveType.center,
-                      ),
-                    )
+                  ? const LoadingIndicator()
                   : ListView.builder(
                       physics: BouncingScrollPhysics(),
                       itemCount: vocabProvider.vocabs.length,

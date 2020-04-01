@@ -6,25 +6,21 @@ import 'package:greader/models/definition.dart';
 
 class WordDetail {
   final String word;
-  final String pronounciation;
   final List<Definition> definitions;
 
   WordDetail({
     @required this.word,
-    @required this.pronounciation,
     @required this.definitions,
   })  : assert(word != null),
-        assert(pronounciation != null),
         assert(definitions != null);
 
   WordDetail copyWith({
     String word,
-    String pronounciation,
+    String pronunciation,
     List<Definition> definitions,
   }) {
     return WordDetail(
       word: word ?? this.word,
-      pronounciation: pronounciation ?? this.pronounciation,
       definitions: definitions ?? this.definitions,
     );
   }
@@ -32,7 +28,6 @@ class WordDetail {
   Map<String, dynamic> toMap() {
     return {
       'word': word,
-      'pronounciation': pronounciation,
       'definitions': List<dynamic>.from(definitions.map((x) => x.toMap())),
     };
   }
@@ -42,9 +37,8 @@ class WordDetail {
 
     return WordDetail(
       word: map['word'],
-      pronounciation: map['pronounciation'],
-      definitions: List<Definition>.from(
-          map['definitions']?.map((x) => Definition.fromMap(x))),
+      definitions: List<Definition>.from(map['definitions']
+          ?.map((x) => Definition.fromMap(x as Map<String, dynamic>))),
     );
   }
 
@@ -53,8 +47,7 @@ class WordDetail {
   static WordDetail fromJson(String source) => fromMap(json.decode(source));
 
   @override
-  String toString() =>
-      'WordDetail(word: $word, pronounciation: $pronounciation, definitions: $definitions)';
+  String toString() => 'WordDetail(word: $word, definitions: $definitions)';
 
   @override
   bool operator ==(Object o) {
@@ -62,11 +55,9 @@ class WordDetail {
 
     return o is WordDetail &&
         o.word == word &&
-        o.pronounciation == pronounciation &&
         listEquals(o.definitions, definitions);
   }
 
   @override
-  int get hashCode =>
-      word.hashCode ^ pronounciation.hashCode ^ definitions.hashCode;
+  int get hashCode => word.hashCode ^ definitions.hashCode;
 }

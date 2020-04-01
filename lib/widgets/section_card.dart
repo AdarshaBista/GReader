@@ -5,6 +5,7 @@ import 'package:greader/utils/util.dart';
 import 'package:greader/models/section.dart';
 
 import 'package:greader/styles/styles.dart';
+import 'package:greader/widgets/word_detail_sheet.dart';
 
 class SectionCard extends StatelessWidget {
   final Section section;
@@ -17,13 +18,16 @@ class SectionCard extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         itemCount: section.words.length,
         itemBuilder: (BuildContext context, int index) {
-          return Text(
-            section.words[index],
-            style: mediumText.copyWith(
-                color: Util.isAntonym(section.words[index])
-                    ? Colors.red
-                    : Colors.black),
-            textAlign: TextAlign.center,
+          return GestureDetector(
+            onTap: () => _openWordDetails(context, section.words[index]),
+            child: Text(
+              section.words[index],
+              style: mediumText.copyWith(
+                  color: Util.isAntonym(section.words[index])
+                      ? Colors.red
+                      : Colors.black),
+              textAlign: TextAlign.center,
+            ),
           );
         },
         separatorBuilder: (BuildContext context, int index) {
@@ -53,6 +57,31 @@ class SectionCard extends StatelessWidget {
           _buildWordsList(),
         ],
       ),
+    );
+  }
+
+  void _openWordDetails(BuildContext context, String word) {
+    showModalBottomSheet(
+      context: context,
+      enableDrag: true,
+      isScrollControlled: true,
+      clipBehavior: Clip.antiAlias,
+      elevation: 12.0,
+      backgroundColor: backgroundColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(16.0),
+          topRight: Radius.circular(16.0),
+        ),
+      ),
+      builder: (context) {
+        return Container(
+          height: MediaQuery.of(context).size.height * 0.7,
+          child: WordDetailSheet(
+            word: word,
+          ),
+        );
+      },
     );
   }
 }
