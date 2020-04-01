@@ -19,7 +19,7 @@ class VocabProvider extends ChangeNotifier {
 
     try {
       final http.Response response = await http.get(
-        'https://gist.githubusercontent.com/AdarshaBista/2a6bc4831a3cb6732bb7c517136452be/raw/10e82223113b4065a27fcd4ee43f29018f872ef7/words.json',
+        'https://raw.githubusercontent.com/AdarshaBista/GReader/master/api/vocabs.json',
       );
       final List<dynamic> vocabListJson = jsonDecode(response.body);
 
