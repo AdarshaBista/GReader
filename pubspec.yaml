@@ -1,5 +1,5 @@
 name: greader
-description: A new Flutter project.
+description: App to study the english vocabularies for GRE test.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -23,8 +23,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  provider: ^3.0.0+1
-  shared_preferences: ^0.5.3+1
+  provider: ^4.0.4
   http: ^0.12.0+2
   wave_slider: ^0.1.0
   flutter_spinkit: ^3.1.0

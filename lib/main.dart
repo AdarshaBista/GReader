@@ -17,9 +17,9 @@ class _GReaderState extends State<GReader> {
   final VocabProvider vocabProvider = VocabProvider();
 
   @override
-  void initState() {
-    super.initState();
-    vocabProvider.fetchVocabs();
+  void didChangeDependencies() async {
+    super.didChangeDependencies();
+    await vocabProvider.fetchVocabs();
   }
 
   @override

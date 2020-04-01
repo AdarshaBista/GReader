@@ -20,8 +20,12 @@ const TextStyle smallText = TextStyle(
   color: Colors.black87,
   fontFamily: 'JosefinSans',
   fontSize: 18.0,
-  fontWeight: FontWeight.bold,
-  letterSpacing: 1,
+);
+
+const TextStyle extraSmallText = TextStyle(
+  color: Colors.black54,
+  fontFamily: 'JosefinSans',
+  fontSize: 14.0,
 );
 
 // App Colors
@@ -32,6 +36,6 @@ const Color accentColor = Color(0xffffa939);
 // Difficulty level colors
 const difficultyColors = [
   Color(0xffe53935),
-  accentColor,
+  Color(0xffffdb39),
   Color(0xff00C853),
 ];

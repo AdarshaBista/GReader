@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:greader/styles/styles.dart';
 import 'package:greader/models/vocabulary.dart';
 
+import 'package:greader/styles/styles.dart';
 import 'package:greader/widgets/section_card.dart';
 
 class VocabPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class VocabPage extends StatelessWidget {
         appBar: AppBar(
           elevation: 0.0,
           centerTitle: true,
-          backgroundColor: difficultyColors[vocabulary.difficultyLevel.index],
+          backgroundColor: difficultyColors[vocabulary.difficultyLevel],
           title: Text(
             vocabulary.title,
             style: largeText,
